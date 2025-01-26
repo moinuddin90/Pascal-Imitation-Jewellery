@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Jewelry</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* General Styling */
+ .body {  background-color: #ebdebe;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+/* Header Styling */
+header {
+    background-color: #fff;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Container for Header content */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #fff;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Container for Header content */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Brand Name Styling */
+.brand {
+    /* font-size: 2rem; */
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.brand:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Styling */
+.main-nav {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Underline animation on hover */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s, left 0.3s;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Menu Toggle (for mobile view) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu-toggle:hover {
+    color: #007bff;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #ebdebe;
+          padding: 0.5em 1em;
+        }
+        .navbar a {
+          color: white;
+          text-decoration: none;
+          margin: 0 0.5em;
+          padding: 0.5em 1em;
+          transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+          background-color: #bd9c74;
+          border-radius: 4px;
+        }
+        .navbar .logo {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: rgb(255, 255, 254);
+        }
+        .navbar .nav-links {
+          display: flex;
+        }
+/* Product Section */
+.products {
+    text-align: center;
+    padding: 20px;
+    background: white;
+}
+
+.category-title {
+    font-size: 24px;
+    color: #444;
+}
+
+/* Product Cards */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #db9c74;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+       /* Fade-in effect when the page loads */
+.animated-image {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.product-container .product img {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Zoom-in effect on hover */
+.product-container .product:hover img {
+    transform: scale(1.1); /* Increase image size */
+}
+
+/* Apply fade-in animation */
+.product-container .product img {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Optional: To delay the fade-in for each image */
+.product-container .product:nth-child(1) img {
+    animation-delay: 0.2s;
+}
+.product-container .product:nth-child(2) img {
+    animation-delay: 0.4s;
+}
+.product-container .product:nth-child(3) img {
+    animation-delay: 0.6s;
+}
+
+.footer {
+            background-color: #bd9c74;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ebdebe;
+        }
+
+        .footer-column .contact {
+            line-height: 1.8;
+        }
+
+        .newsletter {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+
+        .newsletter button {
+            padding: 10px;
+            background-color: #ff5757;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #ebdebe;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="brand">Pascal Imitation Jewelry</span>
+            <nav class="main-nav">
+                <a href="home.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="comparison.html">Compare</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </div>
+    </header>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+    
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+<br>
+
+<div class="navbar">
+    <div class="logo">Brands</div>
+    <div class="nav-links">
+      <a href="harry.html">Harry Winston</a>
+      <a href="cartier.html">cartier</a>
+      <a href="david.html">David Yuman</a>
+    </div>
+  </div><br>
+<section class="products" style="background-color: #ebdebe;">
+    <h1 class="category-title">Earrings</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEzE7kfv20pKpDVCW7ky5yeG6aQ_NCTwptSA&shttps://www.graff.com/dw/image/v2/BFNT_PRD/on/demandware.static/-/Sites-master-catalog/default/dw32f4e944/sfcc-graff-staging/R/G/E/1/8/RGE1805_RGE1805_model_2.jpg?sw=1000&sh=1000" alt="Graff Earrings">
+            <h3>Harry Winston</h3>
+            <p class="price">$2,000</p>
+            <p>Foil Earrings with Semi Precious Stones.</p>
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCv2_Ikg4MfuroPcymjCUip98-UYjF4oElYHUZ54Qojn1Y1w-5_TV3Kmx7QDoZZdMf6Xw&usqp=CAU" alt="Tiffany & Co Earrings">
+            <h3>Cartier</h3>
+            <p class="price">$6,000</p>
+            <p>Traditional Semi Precoius One Gram Earring Stone Design.</p>
+        </div>
+        <div class="product">
+            <img src="https://cdn11.bigcommerce.com/s-9459e/images/stencil/600x600/products/1261/4397/chalcedony_on_lever_backs__17035.1644354791.jpg?c=2" alt="Bulgari Earrings">
+            <h3>David Yuman</h3>
+            <p class="price">$2,200</p>
+            <p>Pam Stone Design.</p>
+        </div>
+    </div>
+</section>
+
+<section class="products" style="background-color: #ebdebe;">
+    <h1 class="category-title">Rings</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo_meW-42PWa_zKKmP4JjsIMHAMupwk93yiA&s" alt="Graff Ring">
+            <h3>Harry Winston</h3>
+            <p class="price">$3,000</p>
+            <p> Peared Shape Emearld & Coloured Gemstone Engagement Ring</p>
+        </div>
+        <div class="product">
+            <img src="https://i.etsystatic.com/14110719/r/il/88870d/4219499435/il_570xN.4219499435_ny2o.jpg" alt="Tiffany & Co Ring">
+            <h3>Cartier</h3>
+            <p class="price">$2,200</p>
+            <p>Cushion Cut Green Emerald Ring Vintage Unique Nature INspired Ring.</p>
+        </div>
+        <div class="product">
+            <img src="https://edengardenjewelry.com/cdn/shop/products/P1288628_2048x2048.jpg?v=1664374366" alt="Bulgari Ring">
+            <h3>David Yuman</h3>
+            <p class="price">$3,000</p>
+            <p>Unique Gemstone Ring with Rutile Peridot.</p>
+        </div>
+    </div>
+</section>
+
+<section class="products" style="background-color: #ebdebe;">
+    <h1 class="category-title">Necklaces</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://www.shutterstock.com/shutterstock/photos/1922411396/display_1500/stock-photo-beautiful-girl-with-set-jewelry-elegant-woman-with-cute-hairstyle-in-a-necklace-with-earrings-1922411396.jpg" alt="Graff Necklace">
+            <h3>Harry Winston</h3>
+            <p class="price">$9,00</p>
+            <p>Semi Precoius Cubic Necklace .</p>
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvYoJgRcNhnMhAScvq6OmVsxCluXyks-TT2Q&s" alt="Tiffany & Co Necklace">
+            <h3>Cartier</h3>
+            <p class="price">$4,200</p>
+            <p>Semi Precious Stone Necklace in sterling Silver .</p>
+        </div>
+        <div class="product">
+            <img src="https://i.etsystatic.com/11682227/r/il/88db0c/4970188799/il_300x300.4970188799_hcca.jpg" alt="Bulgari Necklace">
+            <h3>David Yuman</h3>
+            <p class="price">$5,000</p>
+            <p>Semi Precious Vintage Design.</p>
+        </div>
+    </div>
+</section>
+
+<section class="products" style="background-color: #ebdebe;">
+    <h1 class="category-title">Bracelets</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYkJxPPnfPuRy3aOu6uMfo3qevXg3VEa8HtpV9zgz1zQvuAIfXePL_cvrRp6UzLRpNbLs&usqp=CAU" alt="Graff Bracelet">
+            <h3>Harry Winston</h3>
+            <p class="price">$1,200</p>
+            <p>Multicolor Earthlike Raw Stone Bracelet</p>
+        </div>
+        <div class="product">
+            <img src="https://www.adorebypriyanka.com/cdn/shop/products/WhatsAppImage2022-04-06at3.41.30PM_1_1800x1800.jpg?v=1714647053" alt="Tiffany & Co Bracelet">
+            <h3>Cartier</h3>
+            <p class="price">$4,000</p>
+            <p>Matte Gold Semi Precious Stone Bracelet.</p>
+        </div>
+        <div class="product">
+            <img src="https://i.etsystatic.com/7203313/r/il/4fb097/5451230652/il_300x300.5451230652_81zd.jpg" alt="Bulgari Bracelet">
+            <h3>David Yuman</h3>
+            <p class="price">$3,000</p>
+            <p>Amethyst Multi Gemstone Bracelet,Bezel Set Gemstone Bracelet.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-column">
+        <h3>Site Links</h3>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="comparison.html">Compare</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Products</h3>
+        <ul>
+            <li><a href="gold.html">Earrings</a></li>
+            <li><a href="tiffany.html">Necklace Set</a></li>
+            <li><a href="bvlgari.html">Rings for Girls</a></li>
+            <li><a href="graff.html">Bangles and Bracelets</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Get in Touch</h3>
+        <div class="contact">
+            <p>+92 3003600618</p>
+            <p>Pascal Imitation Jewellery@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="footer-column">
+        <h3>Subscribe Our Newsletter</h3>
+        <div class="newsletter">
+            <input type="email" placeholder="Your Email" id="email-input">
+            <button onclick="subscribeNewsletter()">&rarr;</button>
+        </div>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/256/124/124010.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank">
+               <img src="https://img.freepik.com/free-vector/instagram-logo_1199-122.jpg" alt="Instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function subscribeNewsletter() {
+        const emailInput = document.getElementById('email-input').value;
+        if (emailInput) {
+            alert(`Thank you for subscribing with: ${emailInput}`);
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    }
+</script>
+   </body>
+</html>

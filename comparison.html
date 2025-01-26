@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pascal Imitation Jewelry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      /* Header Styling */
+header {
+    background-color: #fff;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Container for Header content */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Brand Name Styling */
+.brand {
+    /* font-size: 2rem; */
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.brand:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar a:hover {
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Underline animation on hover */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s, left 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Menu Toggle (for mobile view) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu-toggle:hover {
+    color: #007bff;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer {
+            background-color: #bd9c74;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ff5757;
+        }
+
+        .footer-column .contact {
+            line-height: 1.8;
+        }
+
+        .newsletter {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+
+        .newsletter button {
+            padding: 10px;
+            background-color: #ff5757;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #e04444;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .comparison {
+            padding: 2em;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="brand">Pascal Imitation Jewelry</span>
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="comparison.html">Compare</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </div>
+    </header>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+    
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+
+    <section class="comparison">
+        <h2>Compare Products</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Original</th>
+                    <th>Semi-Precious</th>
+                    <th>Artificial</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Material</td>
+                    <td>Gold, Diamonds</td>
+                    <td>Semi-Precious Stones</td>
+                    <td>Plastic, Glass</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>High</td>
+                    <td>Moderate</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>Durability</td>
+                    <td>Very High</td>
+                    <td>Moderate</td>
+                    <td>Low</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Site Links</h3>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="comparison.html">Compare</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Products</h3>
+            <ul>
+                <li><a href="gold.html">Earrings</a></li>
+                <li><a href="tiffany.html">Necklace Set</a></li>
+                <li><a href="bvlgari.html">Rings for Girls</a></li>
+                <li><a href="graff.html">Bangles and Bracelets</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Get in Touch</h3>
+            <div class="contact">
+                <p>+92 3003600618</p>
+                <p>Pascal Imitation Jewellery@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Subscribe Our Newsletter</h3>
+            <div class="newsletter">
+                <input type="email" placeholder="Your Email" id="email-input">
+                <button onclick="subscribeNewsletter()">&rarr;</button>
+            </div>
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/256/124/124010.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/" target="_blank">
+                   <img src="https://img.freepik.com/free-vector/instagram-logo_1199-122.jpg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function subscribeNewsletter() {
+            const emailInput = document.getElementById('email-input').value;
+            if (emailInput) {
+                alert(`Thank you for subscribing with: ${emailInput}`);
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+    </script>
+</body>
+</html>

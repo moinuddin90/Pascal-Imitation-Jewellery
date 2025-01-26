@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    
+    <style>
+           body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+                /* Header Styling */
+header {
+    background-color: #fff;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Container for Header content */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Brand Name Styling */
+.brand {
+    /* font-size: 2rem; */
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.brand:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Styling */
+.main-nav {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Underline animation on hover */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s, left 0.3s;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Menu Toggle (for mobile view) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu-toggle:hover {
+    color: #007bff;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+
+
+        .h1{
+            font-family: 'initial';
+            font-size: xx-large;
+            text-align: center;
+        }
+        .h2{
+            font-family: 'initial';
+            font-size: xx-large;
+            text-align: center;
+        }
+        .h1{
+            font-family: 'initial';
+            font-size: xx-large;
+            text-align: center;
+        }
+        .h{
+            font-family: 'initial';
+            font-size: xx-large;
+            text-align: center;
+        }
+        .h{
+            font-family: 'initial';
+            font-size: xx-large;
+            text-align: center;   
+        }
+        .h{
+          font-family: 'initial';
+            font-size: xx-large;
+            text-align: center; 
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+        .modal-body{
+          height: 400px;
+       
+        }
+            body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+             }
+                      
+            .form-container {
+             background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+             padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+                      
+           .form-label {
+            font-weight: bold;
+             }
+                      
+            .form-control {
+             border: 1px solid #ced4da;
+             border-radius: 4px;
+             }
+                      
+            .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            }
+                      
+            .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            }
+            
+             .btn-primary:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 91, 179, 0.5);
+            }
+                      
+            .invalid-feedback {
+            font-size: 0.875em;
+            color: #dc3545;
+            }
+                        
+  
+            #successCard {
+            max-width: 300px;
+            margin: 20px auto;
+            }
+            .modal-title{
+              color: black;
+              text-align: center;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-size: large;
+            }
+            .h1{
+              font-family: 'initial';
+            font-size: xx-large;
+            text-align: center; 
+            }
+           .h1{
+            font-family: 'initial';
+            font-size: xx-large;
+            text-align: center; 
+           }
+           .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #ebdebe;
+          padding: 0.5em 1em;
+        }
+        .navbar a {
+          color: white;
+          text-decoration: none;
+          margin: 0 0.5em;
+          padding: 0.5em 1em;
+          transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+          background-color: #bd9c74;
+          border-radius: 4px;
+        }
+        .navbar .logo {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: rgb(255, 255, 255);
+        }
+        .navbar .nav-links {
+          display: flex;
+        }
+        .footer {
+            background-color: #bd9c74;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ebdebe;
+        }
+
+        .footer-column .contact {
+            line-height: 1.8;
+        }
+
+        .newsletter {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+
+        .newsletter button {
+            padding: 10px;
+            background-color: #ff5757;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #e04444;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <header>
+      <div class="container">
+          <span class="brand">Pascal Imitation Jewelry</span>
+          <nav class="main-nav">
+              <a href="home.html">Home</a>
+              <a href="products.html">Products</a>
+              <a href="comparison.html">Compare</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact</a>
+              <a href="feedback.html">Feedback</a>
+          </nav>
+          <button class="menu-toggle" aria-label="Toggle navigation">
+              ☰
+          </button>
+      </div>
+  </header>
+  <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navbar = document.querySelector('.navbar');
+  
+      menuToggle.addEventListener('click', () => {
+          navbar.classList.toggle('active');
+      });
+  </script>    
+    <br>
+
+    <div class="navbar">
+      <div class="logo">Brands</div>
+      <div class="nav-links">
+        <a href="harry.html">Harry Winston.</a>
+        <a href="cartier.html">Cartier</a>
+        <a href="david.html">David Yuman</a>
+    </div>
+    </div>
+    
+    <br>
+
+ <div style="background-color: #ebdebe;">
+<h1 class="h1">harry Winston</h1><br>
+<H2 class="h2">EARRINGS</H2>
+<br>
+
+<div class="container">
+    <div class="row">
+
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="https://i.etsystatic.com/11955506/r/il/fc1b93/6468062378/il_794xN.6468062378_hhth.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Price:$4,000</h5>
+              <p class="card-text">Semi-Precious Stone Earrings, Dangle Earrings, Green Fluorite Earrings, Natural Stone Earrings, .</p>
+              <!-- <a href="#" class="btn btn-primary"></a> -->
+         
+          
+  <div class="container mt-5">
+    <!-- Button to Open the Modal -->
+    <button style="background-color: orange;" type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#formModal ">
+      place order
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Modal Body with Form -->
+          <div class="modal-body">
+            <form id="modalForm" novalidate>
+              <!-- First Name -->
+              <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                <div class="invalid-feedback">Please enter your first name.</div>
+              </div>
+
+              <!-- Last Name -->
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                <div class="invalid-feedback">Please enter your last name.</div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <!-- Contact Number -->
+              <div class="mb-3">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // JavaScript for form validation
+    (function () {
+      'use strict';
+      const form = document.getElementById('modalForm');
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>    
+        
+            </div>
+          </div>
+      </div>
+
+      <div class="col">
+       <div class="card" style="width: 18rem;">
+            <img src="https://i.etsystatic.com/18243313/r/il/fa48f0/3431760903/il_794xN.3431760903_qbg2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Price:$12,00</h5>
+              <p class="card-text">Semi Precious Raw Rough Cut Natural Green Kyanite and Faceted Labradorite Stone Drop Earrings.</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+
+              <div class="container mt-5">
+                <!-- Button to Open the Modal -->
+                <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                  place order
+                </button>
+            
+                <!-- The Modal -->
+                <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+            
+                      <!-- Modal Body with Form -->
+                      <div class="modal-body">
+                        <form id="modalForm" novalidate>
+                          <!-- First Name -->
+                          <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                            <div class="invalid-feedback">Please enter your first name.</div>
+                          </div>
+            
+                          <!-- Last Name -->
+                          <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                            <div class="invalid-feedback">Please enter your last name.</div>
+                          </div>
+            
+                          <!-- Email -->
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                          </div>
+            
+                          <!-- Contact Number -->
+                          <div class="mb-3">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                          </div>
+                        </form>
+                      </div>
+            
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Bootstrap JS -->
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+              <script>
+                // JavaScript for form validation
+                (function () {
+                  'use strict';
+                  const form = document.getElementById('modalForm');
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                })();
+              </script>
+
+              
+
+            </div>
+          </div>
+      </div>
+
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+            <img src="https://i.etsystatic.com/30571316/r/il/13d38e/4068718698/il_794xN.4068718698_tvxs.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Price:$6,000</h5>
+              <p class="card-text">Natural Labradorite With Multi Stone Dangle Earrings.</p>
+
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+              <div class="container mt-5">
+                <!-- Button to Open the Modal -->
+                <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                  place order
+                </button>
+            
+                <!-- The Modal -->
+                <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+            
+                      <!-- Modal Body with Form -->
+                      <div class="modal-body">
+                        <form id="modalForm" novalidate>
+                          <!-- First Name -->
+                          <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                            <div class="invalid-feedback">Please enter your first name.</div>
+                          </div>
+            
+                          <!-- Last Name -->
+                          <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                            <div class="invalid-feedback">Please enter your last name.</div>
+                          </div>
+            
+                          <!-- Email -->
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                          </div>
+            
+                          <!-- Contact Number -->
+                          <div class="mb-3">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                          </div>
+                        </form>
+                      </div>
+            
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Bootstrap JS -->
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+              <script>
+                // JavaScript for form validation
+                (function () {
+                  'use strict';
+                  const form = document.getElementById('modalForm');
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                })();
+              </script>
+
+            
+            </div>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div style="background-color: #ebdebe;">
+<br>
+
+<h1 class="h"> RINGS</h1><br>
+<div class="container">
+    <div class="row">
+
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+            <img src="https://i.etsystatic.com/27766378/r/il/6edf25/6159027411/il_794xN.6159027411_b47l.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Price:$2,00</h5>
+              <p class="card-text">Flawless Pink Madagascar Morganite RIng Women Cushion Cut Solitarie Ring Bezel Set Vintage.</p>
+              
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+
+              <div class="container mt-5">
+                <!-- Button to Open the Modal -->
+                <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                  place order
+                </button>
+            
+                <!-- The Modal -->
+                <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+            
+                      <!-- Modal Body with Form -->
+                      <div class="modal-body">
+                        <form id="modalForm" novalidate>
+                          <!-- First Name -->
+                          <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                            <div class="invalid-feedback">Please enter your first name.</div>
+                          </div>
+            
+                          <!-- Last Name -->
+                          <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                            <div class="invalid-feedback">Please enter your last name.</div>
+                          </div>
+            
+                          <!-- Email -->
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                          </div>
+            
+                          <!-- Contact Number -->
+                          <div class="mb-3">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                          </div>
+                        </form>
+                      </div>
+            
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Bootstrap JS -->
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+              <script>
+                // JavaScript for form validation
+                (function () {
+                  'use strict';
+                  const form = document.getElementById('modalForm');
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                })();
+              </script>
+            </div>
+          </div>
+      </div>
+
+      <div class="col">
+       <div class="card" style="width: 18rem;">
+            <img src="https://i.etsystatic.com/18791601/r/il/622a7f/2366603968/il_794xN.2366603968_5ylj.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Price:$4,000</h5>
+              <p class="card-text">Blue Gemstone Engagement Rings, Blue Topaz Ring, Natural Gemstone Rings.</p>
+            
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+              <div class="container mt-5">
+                <!-- Button to Open the Modal -->
+                <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                  place order
+                </button>
+            
+                <!-- The Modal -->
+                <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+            
+                      <!-- Modal Body with Form -->
+                      <div class="modal-body">
+                        <form id="modalForm" novalidate>
+                          <!-- First Name -->
+                          <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                            <div class="invalid-feedback">Please enter your first name.</div>
+                          </div>
+            
+                          <!-- Last Name -->
+                          <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                            <div class="invalid-feedback">Please enter your last name.</div>
+                          </div>
+            
+                          <!-- Email -->
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                          </div>
+            
+                          <!-- Contact Number -->
+                          <div class="mb-3">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                          </div>
+                        </form>
+                      </div>
+            
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Bootstrap JS -->
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+              <script>
+                // JavaScript for form validation
+                (function () {
+                  'use strict';
+                  const form = document.getElementById('modalForm');
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                })();
+              </script>
+            </div>
+          </div>
+      </div>
+      
+      <div class="col">
+  <div class="card" style="width: 18rem;">
+            <img src="https://i.etsystatic.com/27127409/r/il/98c10d/5023392117/il_794xN.5023392117_sqgb.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Price:$2,000</h5>
+              <p class="card-text">Blue Topaz Ring Birthstone Ring,Dainty Ring.</p>
+
+              <div class="container mt-5">
+                <!-- Button to Open the Modal -->
+                <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                  place order
+                </button>
+            
+                <!-- The Modal -->
+                <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+            
+                      <!-- Modal Body with Form -->
+                      <div class="modal-body">
+                        <form id="modalForm" novalidate>
+                          <!-- First Name -->
+                          <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                            <div class="invalid-feedback">Please enter your first name.</div>
+                          </div>
+            
+                          <!-- Last Name -->
+                          <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                            <div class="invalid-feedback">Please enter your last name.</div>
+                          </div>
+            
+                          <!-- Email -->
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                          </div>
+            
+                          <!-- Contact Number -->
+                          <div class="mb-3">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                          </div>
+                        </form>
+                      </div>
+            
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Bootstrap JS -->
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+              <script>
+                // JavaScript for form validation
+                (function () {
+                  'use strict';
+                  const form = document.getElementById('modalForm');
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                })();
+              </script>
+
+                </div>
+              </div>
+            </div><br><br>
+          </div>
+          <div style="background-color: #ebdebe;">
+  
+            <h1 class="h1">BRACELETES</h1><br><br>
+            
+              <div class="row">
+                <div class="col">
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://i.etsystatic.com/31182397/r/il/681d19/4174670457/il_794xN.4174670457_bsof.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Price:$1,300</h5>
+                      <p class="card-text"> Malachite Bracelet Yellow, Green Gemstone Chain Bracelet.</p>
+                 
+
+                      <div class="container mt-5">
+                        <!-- Button to Open the Modal -->
+                        <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                          place order
+                        </button>
+                    
+                        <!-- The Modal -->
+                        <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                    
+                              <!-- Modal Body with Form -->
+                              <div class="modal-body">
+                                <form id="modalForm" novalidate>
+                                  <!-- First Name -->
+                                  <div class="mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                  </div>
+                    
+                                  <!-- Last Name -->
+                                  <div class="mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                  </div>
+                    
+                                  <!-- Email -->
+                                  <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                  </div>
+                    
+                                  <!-- Contact Number -->
+                                  <div class="mb-3">
+                                    <label for="contactNumber" class="form-label">Contact Number</label>
+                                    <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                                    <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                                  </div>
+                                </form>
+                              </div>
+                    
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <!-- Bootstrap JS -->
+                      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+                      <script>
+                        // JavaScript for form validation
+                        (function () {
+                          'use strict';
+                          const form = document.getElementById('modalForm');
+                          form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                              event.preventDefault();
+                              event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                          }, false);
+                        })();
+                      </script>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://i.etsystatic.com/16350271/r/il/fc00cf/5001381694/il_794xN.5001381694_j05x.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Price:$1,500</h5>
+                      <p class="card-text"> Italian Gemstone Charm Bracelet, Yellow Gold, Onyx, Malachite, Rectangular Charm Bracelet.</p>
+                  
+                      <div class="container mt-5">
+                        <!-- Button to Open the Modal -->
+                        <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                          place order
+                        </button>
+                    
+                        <!-- The Modal -->
+                        <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                    
+                              <!-- Modal Body with Form -->
+                              <div class="modal-body">
+                                <form id="modalForm" novalidate>
+                                  <!-- First Name -->
+                                  <div class="mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                  </div>
+                    
+                                  <!-- Last Name -->
+                                  <div class="mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                  </div>
+                    
+                                  <!-- Email -->
+                                  <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                  </div>
+                    
+                                  <!-- Contact Number -->
+                                  <div class="mb-3">
+                                    <label for="contactNumber" class="form-label">Contact Number</label>
+                                    <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                                    <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                                  </div>
+                                </form>
+                              </div>
+                    
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <!-- Bootstrap JS -->
+                      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+                      <script>
+                        // JavaScript for form validation
+                        (function () {
+                          'use strict';
+                          const form = document.getElementById('modalForm');
+                          form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                              event.preventDefault();
+                              event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                          }, false);
+                        })();
+                      </script>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://i.etsystatic.com/5383059/r/il/0d171a/6558863532/il_1140xN.6558863532_t4b7.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Price:$1,400</h5>
+                      <p class="card-text">Aquamarine Bracelet, march Birthstone jewelry, Moonstone, chunky handmade Semi Precious Stone Bracelets.</p>
+                      <div class="container mt-5">
+                        <!-- Button to Open the Modal -->
+                        <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                          place order
+                        </button>
+                    
+                        <!-- The Modal -->
+                        <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                    
+                              <!-- Modal Body with Form -->
+                              <div class="modal-body">
+                                <form id="modalForm" novalidate>
+                                  <!-- First Name -->
+                                  <div class="mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                  </div>
+                    
+                                  <!-- Last Name -->
+                                  <div class="mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                  </div>
+                    
+                                  <!-- Email -->
+                                  <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                  </div>
+                    
+                                  <!-- Contact Number -->
+                                  <div class="mb-3">
+                                    <label for="contactNumber" class="form-label">Contact Number</label>
+                                    <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                                    <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                                  </div>
+                                </form>
+                              </div>
+                    
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <!-- Bootstrap JS -->
+                      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+                      <script>
+                        // JavaScript for form validation
+                        (function () {
+                          'use strict';
+                          const form = document.getElementById('modalForm');
+                          form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                              event.preventDefault();
+                              event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                          }, false);
+                        })();
+                      </script>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div style="background-color: #ebdebe;">
+          <br>
+            <h1 class="h1">NECKLACE</h1><br>
+
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="card" style="width: 18rem;">
+                      <img src="https://silvery.co.za/wp-content/uploads/2023/08/Oval-Sapphire-Pendant-Necklace-Select-Sapphire-Colour-3-Colours.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Price:$2,000</h5>
+                        <p class="card-text">Oval Sapphire Pendant Necklace with SterlingSilver Chain.</p>
+                        <!-- <a href="#" class="btn btn-primary"></a> -->
+                   
+                    
+            <div class="container mt-5">
+              <!-- Button to Open the Modal -->
+              <button style="background-color: orange;" type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#formModal ">
+                place order
+              </button>
+          
+              <!-- The Modal -->
+              <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+          
+                    <!-- Modal Body with Form -->
+                    <div class="modal-body">
+                      <form id="modalForm" novalidate>
+                        <!-- First Name -->
+                        <div class="mb-3">
+                          <label for="firstName" class="form-label">First Name</label>
+                          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                          <div class="invalid-feedback">Please enter your first name.</div>
+                        </div>
+          
+                        <!-- Last Name -->
+                        <div class="mb-3">
+                          <label for="lastName" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                          <div class="invalid-feedback">Please enter your last name.</div>
+                        </div>
+          
+                        <!-- Email -->
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                          <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+          
+                        <!-- Contact Number -->
+                        <div class="mb-3">
+                          <label for="contactNumber" class="form-label">Contact Number</label>
+                          <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                          <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                        </div>
+                      </form>
+                    </div>
+          
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+            <script>
+              // JavaScript for form validation
+              (function () {
+                'use strict';
+                const form = document.getElementById('modalForm');
+                form.addEventListener('submit', function (event) {
+                  if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  form.classList.add('was-validated');
+                }, false);
+              })();
+            </script>    
+                  
+                      </div>
+                    </div>
+                </div>
+          
+                <div class="col">
+                 <div class="card" style="width: 18rem;">
+                      <img src="https://alternativedistribution.com.au/wp-content/uploads/2024/06/23.-399.99-Moonstone-_-Prehnite-_-peridot--700x700.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Price:$6,000</h5>
+                        <p class="card-text">Moonlight & Prehnite  & Peridot Sterling Silver Pendant.</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          
+          
+                        
+                        <div class="container mt-5">
+                          <!-- Button to Open the Modal -->
+                          <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                            place order
+                          </button>
+                      
+                          <!-- The Modal -->
+                          <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                      
+                                <!-- Modal Body with Form -->
+                                <div class="modal-body">
+                                  <form id="modalForm" novalidate>
+                                    <!-- First Name -->
+                                    <div class="mb-3">
+                                      <label for="firstName" class="form-label">First Name</label>
+                                      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                      <div class="invalid-feedback">Please enter your first name.</div>
+                                    </div>
+                      
+                                    <!-- Last Name -->
+                                    <div class="mb-3">
+                                      <label for="lastName" class="form-label">Last Name</label>
+                                      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                      <div class="invalid-feedback">Please enter your last name.</div>
+                                    </div>
+                      
+                                    <!-- Email -->
+                                    <div class="mb-3">
+                                      <label for="email" class="form-label">Email</label>
+                                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                      <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+                      
+                                    <!-- Contact Number -->
+                                    <div class="mb-3">
+                                      <label for="contactNumber" class="form-label">Contact Number</label>
+                                      <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                                      <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                                    </div>
+                                  </form>
+                                </div>
+                      
+                                <!-- Modal Footer -->
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Bootstrap JS -->
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+                        <script>
+                          // JavaScript for form validation
+                          (function () {
+                            'use strict';
+                            const form = document.getElementById('modalForm');
+                            form.addEventListener('submit', function (event) {
+                              if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                              }
+                              form.classList.add('was-validated');
+                            }, false);
+                          })();
+                        </script>
+          
+                        
+          
+                      </div>
+                    </div>
+                </div>
+          
+                <div class="col">
+                <div class="card" style="width: 18rem;">
+                      <img src="https://i.etsystatic.com/20119320/c/2913/2315/0/684/il/91a0e2/3460455684/il_340x270.3460455684_9wq7.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Price:$11,00</h5>
+                        <p class="card-text">Double Layered Necklace with Oval Semi Pecious Stone Pendant in Dot Print. </p>
+                         
+                      
+          
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          
+                        <div class="container mt-5">
+                          <!-- Button to Open the Modal -->
+                          <button style="background-color: orange;" type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#formModal">
+                            place order
+                          </button>
+                      
+                          <!-- The Modal -->
+                          <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="formModalLabel">Fill in Your Details</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                      
+                                <!-- Modal Body with Form -->
+                                <div class="modal-body">
+                                  <form id="modalForm" novalidate>
+                                    <!-- First Name -->
+                                    <div class="mb-3">
+                                      <label for="firstName" class="form-label">First Name</label>
+                                      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                      <div class="invalid-feedback">Please enter your first name.</div>
+                                    </div>
+                      
+                                    <!-- Last Name -->
+                                    <div class="mb-3">
+                                      <label for="lastName" class="form-label">Last Name</label>
+                                      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                      <div class="invalid-feedback">Please enter your last name.</div>
+                                    </div>
+                      
+                                    <!-- Email -->
+                                    <div class="mb-3">
+                                      <label for="email" class="form-label">Email</label>
+                                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                      <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+                      
+                                    <!-- Contact Number -->
+                                    <div class="mb-3">
+                                      <label for="contactNumber" class="form-label">Contact Number</label>
+                                      <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+                                      <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                                    </div>
+                                  </form>
+                                </div>
+                      
+                                <!-- Modal Footer -->
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Bootstrap JS -->
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+                        <script>
+                          // JavaScript for form validation
+                          (function () {
+                            'use strict';
+                            const form = document.getElementById('modalForm');
+                            form.addEventListener('submit', function (event) {
+                              if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                              }
+                              form.classList.add('was-validated');
+                            }, false);
+                          })();
+                        </script>
+          
+                      
+                      </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+        </footer>
+
+        <script>
+            function subscribeNewsletter() {
+                const emailInput = document.getElementById('email-input').value;
+                if (emailInput) {
+                    alert(`Thank you for subscribing with: ${emailInput}`);
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            }
+        </script> 
+ <footer class="footer">
+  <div class="footer-column">
+      <h3>Site Links</h3>
+      <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="comparison.html">Compare</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+  </div>
+
+  <div class="footer-column">
+      <h3>Products</h3>
+      <ul>
+          <li><a href="gold.html">Earrings</a></li>
+          <li><a href="tiffany.html">Necklace Set</a></li>
+          <li><a href="bvlgari.html">Rings for Girls</a></li>
+          <li><a href="graff.html">Bangles and Bracelets</a></li>
+      </ul>
+  </div>
+
+  <div class="footer-column">
+      <h3>Get in Touch</h3>
+      <div class="contact">
+          <p>+92 3003600618</p>
+          <p>Pascal Imitation Jewellery@gmail.com</p>
+      </div>
+  </div>
+
+  <div class="footer-column">
+      <h3>Subscribe Our Newsletter</h3>
+      <div class="newsletter">
+          <input type="email" placeholder="Your Email" id="email-input">
+          <button onclick="subscribeNewsletter()">&rarr;</button>
+      </div>
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/256/124/124010.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/" target="_blank">
+             <img src="https://img.freepik.com/free-vector/instagram-logo_1199-122.jpg" alt="Instagram"></a>
+          <a href="https://www.linkedin.com" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" alt="LinkedIn">
+          </a>
+      </div>
+  </div>
+</footer>
+
+<script>
+  function subscribeNewsletter() {
+      const emailInput = document.getElementById('email-input').value;
+      if (emailInput) {
+          alert(`Thank you for subscribing with: ${emailInput}`);
+      } else {
+          alert('Please enter a valid email address.');
+      }
+  }
+</script>
+
+
+</body>
+</html>

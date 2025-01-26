@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Jewelry</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* General Styling */
+ .body {  background-color: #ebdebe;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+/* Header Styling */
+header {
+    background-color: #fff;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Container for Header content */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Brand Name Styling */
+.brand {
+    /* font-size: 2rem; */
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.brand:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Styling */
+.main-nav {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Underline animation on hover */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s, left 0.3s;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Menu Toggle (for mobile view) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu-toggle:hover {
+    color: #007bff;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+/* Brands Navbar */
+.navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #ebdebe;
+          padding: 0.5em 1em;
+        }
+        .navbar a {
+          color: white;
+          text-decoration: none;
+          margin: 0 0.5em;
+          padding: 0.5em 1em;
+          transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+          background-color: #bd9c74;
+          border-radius: 4px;
+        }
+        .navbar .logo {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: rgb(255, 255, 255);
+        }
+        .navbar .nav-links {
+          display: flex;
+        }
+/* Product Section */
+.products {
+    text-align: center;
+    padding: 20px;
+    background: white;
+}
+
+.category-title {
+    font-size: 24px;
+    color: #444;
+}
+
+/* Product Cards */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #a00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+       /* Fade-in effect when the page loads */
+.animated-image {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.product-container .product img {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Zoom-in effect on hover */
+.product-container .product:hover img {
+    transform: scale(1.1); /* Increase image size */
+}
+
+/* Apply fade-in animation */
+.product-container .product img {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Optional: To delay the fade-in for each image */
+.product-container .product:nth-child(1) img {
+    animation-delay: 0.2s;
+}
+.product-container .product:nth-child(2) img {
+    animation-delay: 0.4s;
+}
+.product-container .product:nth-child(3) img {
+    animation-delay: 0.6s;
+}
+.footer {
+            background-color: #bd9c74;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ebdebe;
+        }
+
+        .footer-column .contact {
+            line-height: 1.8;
+        }
+
+        .newsletter {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+
+        .newsletter button {
+            padding: 10px;
+            background-color: #ff5757;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #e04444;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="brand">Pascal Imitation Jewelry</span>
+            <nav class="main-nav">
+                <a href="home.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="comparison.html">Compare</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </div>
+    </header>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+    
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+    <br><br>
+
+    <div class="navbar">
+        <div class="logo">Brands</div>
+        <div class="nav-links">
+          <a href="pandora.html">pandora</a>
+          <a href="forever.html">forever</a>
+          <a href="H&M.html">H&M Accessories</a>
+        </div>
+      </div><br>
+  
+
+<section class="products" style="background-color: #ebdebe;">
+    <h1 class="category-title">Earrings</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgVoTaSTc4H_E2ucQrXHvDmxt7CfaSJGUpyXr98pmd30I-7IiY00tVJbuKo1KNCix3j4&usqp=CAU" alt="Graff Earrings">
+            <h3>Pandora</h3>
+            <p class="price">$4,000</p>
+            <p>Cxidized Silver Earring.</p>
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZWURpRA63uKoorFmIO9h-dTrJ2IM5tH0_6TAublUJv2XIczaVWMUKwYT3ED5fnPeLKg&usqp=CAU">
+            <h3>Forever 21</h3>
+            <p class="price">$6,00</p>
+            <p>Prty Wear Polki Atificial Stud Earring. </p>
+        </div>
+        <div class="product">
+            <img src="https://img.perniaspopupshop.com/catalog/product/p/h/PHRZ012324_1.jpg?impolicy=detailimageprod" alt="Bulgari Earrings">
+            <h3>H&M Accessories</h3>
+            <p class="price">$2,000</p>
+            <p>Silver Kundan Polki Stud Earring</p>
+        </div>
+    </div>
+</section>
+
+<section class="products" style="background-color: #ebdebe;">
+    <h1 class="category-title">Rings</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://zeesy.pk/cdn/shop/files/Ring-8276.jpg?crop=center&height=1350&v=1736105695&width=1080" alt="Graff Ring">
+            <h3>Padora</h3>
+            <p class="price">$1,000</p>
+            <p> Traditional Aritificial Ring in Silver with White Beads.</p>
+        </div>
+        <div class="product">
+            <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/30/3138512/1.jpg?8730" alt="Tiffany & Co Ring">
+            <h3>Forrever 21</h3>
+            <p class="price">$3,000</p>
+            <p>White Aritificial Engagement Ring Vintage Design. </p>
+        </div>
+        <div class="product">
+            <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/33/7623871/1.jpg?0577" alt="Bulgari Ring">
+            <h3>H&M Accessories</h3>
+            <p class="price">$2,000</p>
+            <p>Generic Europen & American Style Flower Artificial Ring .</p>
+        </div>
+    </div>
+</section>
+
+<section class="products" style="background-color: #ebdebe;">
+    <h1 class="category-title">Necklaces</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://img.joomcdn.net/4545481582c34959157d0cd700837ba35adfe787_original.jpeg" alt="Graff Necklace">
+            <h3>Pandora</h3>
+            <p class="price">$2,000</p>
+            <p>Vintage Multilayer Pearl Heart Necklace For Women Trendy Silver Color Chain.</p>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/81HyTpsIEWL._AC_UY1100_.jpg" alt="Tiffany & Co Necklace">
+            <h3>Forever 21.</h3>
+            <p class="price">$8,00</p>
+            <p>Vivanilla Fashion Korean Style Round Pearl Necklace with Flower PendantFor Women.</p>
+        </div>
+        <div class="product">
+            <img src="https://img.joomcdn.net/0278021109db82ccbd98092e70d559d92980a62f_original.jpeg" alt="Bulgari Necklace">
+            <h3>H&M Accessories</h3>
+            <p class="price">$5,000</p>
+            <p>Women Fashion Heart Choker Necklae For Women Silver Color Chain.</p>
+        </div>
+    </div>
+</section>
+
+<section class="products" style="background-color: #ebdebe;">
+    <h1 class="category-title">Bracelets</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://cdn.shopify.com/s/files/1/2715/1950/products/il_fullxfull.1165519423_4397_5000x.jpg" alt="Graff Bracelet">
+            <h3>Pandora</h3>
+            <p class="price">$2,000</p>
+            <p>Beautuful Artificial Silver Flower Bracelet.</p>
+        </div>
+        <div class="product">
+            <img src="https://i.ebayimg.com/images/g/rTQAAOSwNnVhkhgc/s-l400.jpg" alt="Tiffany & Co Bracelet">
+            <h3>Forever 21</h3>
+            <p class="price">$2,000</p>
+            <p>Cute 3D Buterfly Artificial</p>
+        </div>
+        <div class="product">
+            <img src="https://static-01.daraz.pk/p/2d4a11c0a17bb04856923c859fb84928.jpg" alt="Bulgari Bracelet">
+            <h3>H&M Accessories</h3>
+            <p class="price">$3,000</p>
+            <p>Stylish Golden Ball Bracelet for Women.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-column">
+        <h3>Site Links</h3>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="comparison.html">Compare</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Products</h3>
+        <ul>
+            <li><a href="gold.html">Earrings</a></li>
+            <li><a href="tiffany.html">Necklace Set</a></li>
+            <li><a href="bvlgari.html">Rings for Girls</a></li>
+            <li><a href="graff.html">Bangles and Bracelets</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Get in Touch</h3>
+        <div class="contact">
+            <p>+92 3003600618</p>
+            <p>Pascal Imitation Jewellery@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="footer-column">
+        <h3>Subscribe Our Newsletter</h3>
+        <div class="newsletter">
+            <input type="email" placeholder="Your Email" id="email-input">
+            <button onclick="subscribeNewsletter()">&rarr;</button>
+        </div>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/256/124/124010.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank">
+               <img src="https://img.freepik.com/free-vector/instagram-logo_1199-122.jpg" alt="Instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function subscribeNewsletter() {
+        const emailInput = document.getElementById('email-input').value;
+        if (emailInput) {
+            alert(`Thank you for subscribing with: ${emailInput}`);
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    }
+</script> 
+
+   </body>
+</html>
