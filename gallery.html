@@ -1,109 +1,34 @@
-<!-- Gallery Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pascal Imitation Jewelry</title>
+    <title>Pascal Imitation Jewelry - Gallery</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+    body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-} 
-      
+        }
+
 body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #F5F5F5; 
+}
+        /* General Reset */
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .footer {
-            background-color: #bd9c74;
-            color: #fff;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+body {
+    font-family: 'Arial', sans-serif;
+}
 
-        .footer-column {
-            flex: 1;
-            min-width: 200px;
-            margin: 0 20px;
-        }
-
-        .footer-column h3 {
-            font-size: 16px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-column ul li a:hover {
-            color: #ff5757;
-        }
-
-        .footer-column .contact {
-            line-height: 1.8;
-        }
-
-        .newsletter {
-            display: flex;
-            margin-top: 10px;
-        }
-
-        .newsletter input {
-            padding: 10px;
-            border: none;
-            outline: none;
-            flex: 1;
-        }
-
-        .newsletter button {
-            padding: 10px;
-            background-color: #ff5757;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .newsletter button:hover {
-            background-color: #e04444;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-        }
-
-        .social-icons a img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 /* Header Styling */
 header {
     background-color: #fff;
@@ -214,17 +139,190 @@ header {
         display: block;
     }
 }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1em;
-            padding: 2em;
-        }
-        .gallery img {
-            width: 100%;
+.gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        padding: 2em;
+    }
+    .gallery-card {
+        position: relative;
+        text-align: center;
+        border-radius: 50px;
+        height: auto;
+        width: auto;
+        
+        
+    }
+    .gallery img {
+        width: 200px;
+        height: 200px;
+       border-radius: 50px;
+       object-fit: cover;
+
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(12, 8, 8, 0.4);
+    }
+    .buttons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.9em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .add-to-cart {
+        background-color: #8f8e8a;
+        color: #333;
+    }
+    .add-to-cart:hover {
+        background-color: #dbd7c8;
+        transform: scale(1.05);
+    }
+    .buy-now {
+        background-color: #1f1919;
+        color: #fff;
+    }
+    .buy-now:hover {
+        background-color: #161111;
+        transform: scale(1.05);
+    }
+ 
+    .social-feeds {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fff;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-feeds h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.feeds {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feeds img {
+  width: 150px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feeds img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+        .footer {
+            background-color: #bd9c74;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
             height: auto;
-            border-radius: 10px;
         }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ff5757;
+        }
+
+        .footer-column .contact {
+            line-height: 1.8;
+        }
+
+        .newsletter {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+
+        .newsletter button {
+            padding: 10px;
+            background-color: #ff5757;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #e04444;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+.explore{
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    
     </style>
 </head>
 <body>
@@ -245,24 +343,220 @@ header {
             </button>
         </div>
     </header>
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navbar = document.querySelector('.navbar');
-    
-        menuToggle.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    </script>
 
     <section class="gallery">
-        <img src="https://via.placeholder.com/300" alt="Jewelry 1">
-        <img src="https://via.placeholder.com/300" alt="Jewelry 2">
-        <img src="https://via.placeholder.com/300" alt="Jewelry 3">
-        <img src="https://via.placeholder.com/300" alt="Jewelry 4">
-        <img src="https://via.placeholder.com/300" alt="Jewelry 5">
-        <img src="https://via.placeholder.com/300" alt="Jewelry 6">
-    </section>
 
+        <div class="gallery-card">
+            <img src="https://vaidaan.com/cdn/shop/files/gavya-e-web.jpg?v=1730121919&width=600" alt="Jewelry 1">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 1')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 1')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQGCqyE2vD6UXzjh8APPzVMejl2WbOg6Xsdg&s" alt="Jewelry 2">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 2')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 2')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhWJ4-1EcmdO53VcIDjRWAZfD61zfWjmE6SA&s" alt="Jewelry 3">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 3')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 3')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://cdn02.plentymarkets.com/vji7b8phcm0f/item/images/114489/full/Casa-Padrino-Luxus-Damen-Ohrringe-Handgefertigte-19-2-Karat-Gold-Ohrringe-mit-edlen-Diamanten-Hochwertiger-Damenschmuck-Luxus-Qualitaet-114489_5.JPG" alt="Jewelry 4">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 4')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 4')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-hardwearsmall-wrap-bracelet-63008915_1010390_SV_1_M.jpg?&op_usm=1.0,1.0,6.0&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp" alt="Jewelry 5">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 5')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 5')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/17/0595603/1.jpg?3599" alt="Jewelry 6">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 6')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 6')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://d1flfk77wl2xk4.cloudfront.net/Assets/21/941/XXL_p0208294121.jpg"alt="Jewelry 7">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 7')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 7')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-hardwearsmall-link-necklace-70353172_1038084_SV_1.jpg?&op_usm=1.0,1.0,6.0&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp" alt="Jewelry 8">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 8')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 8')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-hardwearlarge-double-link-pendant-68692512_1013697_SV_1.jpg?&op_usm=1.0,1.0,6.0&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp" alt="Jewelry 9">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 9')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 9')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-hardwearsmall-wrap-necklace-63008931_1011635_SV_1.jpg?&op_usm=1.0,1.0,6.0&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp" alt="Jewelry 10">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 10')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 10')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://media.istockphoto.com/id/843000588/photo/magnificent-lady-in-a-perfect-make-up-is-shows-jewelry-set.jpg?s=612x612&w=0&k=20&c=Z93HXyeSBgk40VH4siqptaOLxaiSX5kzho7tysVsxcw=" alt="Jewelry 11">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 11')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 11')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://vanchier.com/wp-content/uploads/2023/03/Traveling-with-Jewelry-How-to-Keep-Your-Accessories-Safe-and-Organized-1.jpeg" alt="Jewelry 12">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 12')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 12')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://zarighar.com/image/cache/catalog/jewellery/1000/ZGJ1020.2-332x497.jpg.webp" alt="Jewelry 13">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 13')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 13')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://img.perniaspopupshop.com/catalog/product/c/u/CUCO032442_1.jpg?impolicy=detailimageprod" alt="Jewelry 14">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 14')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 14')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://www.hanifjewellers.com/cdn/shop/files/43_aa9a8555-c532-4ee6-8ec0-ea9618e6b745_1500X2100.jpg?v=1719987633" alt="Jewelry 15">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 15')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 15')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://zarighar.com/image/cache/catalog/jewellery/1000/ZGJ1664-hanif-jewellers-4-1440x1800.jpg.webp" alt="Jewelry 16">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 16')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 16')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-58838,resizemode-75,msid-109441905/top-trending-products/lifestyle/10-stunning-artificial-jewellery-sets-under-2000-affordable-elegance.jpg" alt="Jewelry 17">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 17')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 17')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20210902/n52h/612fd7c0f997ddce89b64c6a/-473Wx593H-6005537690-multi-MODEL.jpg" alt="Jewelry 18">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 18')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 18')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://static.tossdown.com/images/a268060d-7eb0-41a8-897d-4cf98cdeb0a2.webp" alt="Jewelry 19">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 19')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 19')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://www.waseemjewellers.com/cdn/shop/files/012.webp?v=1694094538&width=1500" alt="Jewelry 20">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 20')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 20')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/5/305806307/UH/IE/IL/151967558/3d87f3apioe000nk1615-1-500x500.jpeg" alt="Jewelry 21">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 21')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 21')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://jadeno.pk/cdn/shop/collections/Necklace_1200x1200.jpg?v=1737028122" alt="Jewelry 22">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 22')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 22')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://gjepc.org/solitaire/wp-content/uploads/2023/10/Sclumberger_ATJ_4x5_4.jpg" alt="Jewelry 23">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 23')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 23')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://zarighar.com/image/cache/catalog/jewellery/1000/ZGJ1675-hanif-jewellers-4-320x320h.jpg.webp" alt="Jewelry 24">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 24')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 24')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://zarighar.com/image/cache/catalog/jewellery/1000/ZGJ1501-damas-pk-1-320x320h.jpg.webp" alt="Jewelry 25">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 25')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 25')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcdxnYYI3aI6nBFuL_ueADQRAgq-7zR-hSchsw41Ow_w_AtpS0LiZ4DE8h_xtkQ7tfqrU&usqp=CAU" alt="Jewelry 26">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 26')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 26')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://media.istockphoto.com/id/1427466115/photo/beauty-model-in-wedding-jewelry-set-elegant-woman-in-necklace-with-earring-and-ring-beautiful.jpg?s=612x612&w=0&k=20&c=AT9DfkZvRbxKkuqjCEGjF9P3D3dOKZvRh2J5hw8mjt0=" alt="Jewelry 27">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 27')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 27')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://i.pinimg.com/736x/e2/98/24/e298245261876d226339a9907dc9ef2e.jpg" alt="Jewelry 28">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 28')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 28')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://demo1.avsystsolutions.com/image/cache/catalog/products/2-600x600.jpg" alt="Jewelry 29">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 29')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 29')">Buy Now</button>
+            </div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLMnkUgIZPiLJ8_TnFeczxBvrnDoiLb0uSw-iSc4RulhdEnq273h4EaTIlxUoVPw8tiv4&usqp=CAU" alt="Jewelry 30">
+            <div class="buttons">
+                <button class="add-to-cart" onclick="addToCart('Jewelry 30')">Add to Cart</button>
+                <button class="buy-now" onclick="addToBuyNow('Jewelry 30')">Buy Now</button>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-column">
@@ -315,6 +609,7 @@ header {
         </div>
     </footer>
 
+   
     <script>
         function subscribeNewsletter() {
             const emailInput = document.getElementById('email-input').value;
@@ -324,6 +619,25 @@ header {
                 alert('Please enter a valid email address.');
             }
         }
+        const cartItems = [];
+        const buyItems = [];
+
+        function addToCart(item) {
+            cartItems.push(item);
+            alert(`${item} added to your cart!`);
+        }
+
+        function addToBuyNow(item) {
+            buyItems.push(item);
+            alert(`${item} added to Buy Now!`);
+        }
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+    alert('Thank you for signing up!'); // Optional: Show a thank you message
+    window.location.href = 'index.html'; // Redirect to the homepage
+});
+
+       
     </script>
 </body>
 </html>

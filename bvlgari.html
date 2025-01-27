@@ -362,7 +362,11 @@ header {
                             if (!this.checkValidity()) {
                                 event.preventDefault();
                                 event.stopPropagation();
-                            }
+                            }else {
+                event.preventDefault(); // Default submission roka
+                alert("Form submitted successfully! Redirecting to Home Page...");
+                window.location.href = "index.html"; // Home page par redirect
+            }
                             this.classList.add('was-validated');
                         }, false);
                     })();

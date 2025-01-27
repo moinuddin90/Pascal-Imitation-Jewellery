@@ -1455,7 +1455,27 @@ header {
                                 <!-- Modal Footer -->
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                                  <form id="modalForm">
+                                    <input type="text" name="name" placeholder="Enter your name" required>
+                                </form>
+                                
+                                <button type="submit" form="modalForm" class="btn btn-primary">Submit</button>
+                                
+                                <script>
+                                    document.getElementById("modalForm").addEventListener("submit", function(event) {
+                                        event.preventDefault(); // Form reload hone se rokta hai
+                                
+                                        // Agar form valid hai tabhi submit hoga
+                                        if (this.checkValidity()) {
+                                            alert("Form submitted successfully! Redirecting to Home Page...");
+                                            window.location.href = "home.html"; // Redirect to home page
+                                        } else {
+                                            alert("Please fill out the required fields."); // Warning if form is incomplete
+                                        }
+                                    });
+                                </script>
+                                
+                                
                                 </div>
                               </div>
                             </div>
